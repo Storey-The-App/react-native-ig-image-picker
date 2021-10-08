@@ -235,9 +235,9 @@ class IGImagePicker: UIViewController {
             config.library.mediaType = .photoAndVideo
             config.shouldSaveNewPicturesToAlbum = false
             config.video.compression = AVAssetExportPresetHighestQuality
-            config.startOnScreen = .library
+            config.startOnScreen = .photo
             // config.screens = screens
-            config.screens = [.library]
+            config.screens = [.photo, .video]
             config.usesFrontCamera = options.value(forKeyPath: "usesFrontCamera") as? Bool ?? false
             config.showsPhotoFilters = options.value(forKeyPath: "showsPhotoFilters") as? Bool ?? true
             config.video.libraryTimeLimit =  options.value(forKeyPath: "video.libraryTimeLimit") as? TimeInterval ?? 500.0
