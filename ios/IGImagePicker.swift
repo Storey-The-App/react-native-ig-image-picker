@@ -157,7 +157,7 @@ class IGImagePicker: UIViewController {
             }
             config.library.mediaType = .photoAndVideo
             config.shouldSaveNewPicturesToAlbum = false
-            config.video.compression = AVAssetExportPresetMediumQuality
+            config.video.compression = AVAssetExportPresetHighestQuality
             config.startOnScreen = .library
             config.screens = [.library, .photo, .video]
             config.usesFrontCamera = options.value(forKeyPath: "usesFrontCamera") as? Bool ?? false
@@ -234,7 +234,7 @@ class IGImagePicker: UIViewController {
             // }
             config.library.mediaType = .photoAndVideo
             config.shouldSaveNewPicturesToAlbum = false
-            config.video.compression = AVAssetExportPresetMediumQuality
+            config.video.compression = AVAssetExportPresetHighestQuality
             config.startOnScreen = .library
             // config.screens = screens
             config.screens = [.library]
