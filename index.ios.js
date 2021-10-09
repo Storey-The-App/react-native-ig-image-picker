@@ -1,9 +1,17 @@
 import {NativeModules} from "react-native";
 
 const {IGImagePicker} = NativeModules;
+
+export const MEDIA_TYPE = {
+  PHOTO: 'photo',
+  VIDEO: 'video',
+  PHOTO_AND_VIDEO: 'photoAndVideo',
+}
+
 const defaultOption = {
   compressImageMaxWidth: 780,
   compressImageMaxHeight: 780,
+  mediaType: MEDIA_TYPE.PHOTO_AND_VIDEO,
   library: {
     maxNumberOfItems: 10,
     defaultMultipleSelection: false,

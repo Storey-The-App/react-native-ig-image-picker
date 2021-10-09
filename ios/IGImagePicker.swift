@@ -211,6 +211,13 @@ class IGImagePicker: UIViewController {
     })
   }
 
+  enum RawMediaType: String
+  {
+    case video = "video"
+    case photo = "photo"
+    case photoAndVideo = "photoAndVideo"
+  }
+
   // based on showImagePicker
   @objc func libraryPickerExtended(_ options: NSDictionary, resolver resolve: @escaping RCTPromiseResolveBlock, rejecter reject: @escaping RCTPromiseRejectBlock) {
 
@@ -232,7 +239,19 @@ class IGImagePicker: UIViewController {
             // if showCaptureImage {
             //   screens.append(.video)
             // }
-            config.library.mediaType = .photoAndVideo
+            let mediaTypeValue = options.value(forKeyPath: "mediaType") as? String ?? ""
+            let mediaType = RawMediaType(rawValue: mediaTypeValue)
+            switch mediaType {
+            case .video:
+              config.library.mediaType = .video
+            case .photo:
+              config.library.mediaType = .photo
+            case .photoAndVideo:
+              config.library.mediaType = .photoAndVideo
+            case .none:
+              config.library.mediaType = .photoAndVideo
+            }
+
             config.shouldSaveNewPicturesToAlbum = false
             config.video.compression = AVAssetExportPresetHighestQuality
             config.startOnScreen = .library
