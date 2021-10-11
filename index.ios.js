@@ -25,7 +25,7 @@ const defaultOption = {
     trimmerMinDuration: 3
   },
   showsVideoTrimmer: true,
-  showsPhotoFilters: true,
+  showsPhotoFilters: false,
   usesFrontCamera: false,
   cropWidth: null,
   cropHeight: null
