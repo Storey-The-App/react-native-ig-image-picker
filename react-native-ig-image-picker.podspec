@@ -10,12 +10,12 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/BunHouth/react-native-ig-image-picker"
   s.license      = "MIT"
   s.authors      = { "Bun" => "bunhouth99@gmail.com" }
-  s.platforms    = { :ios => "9.0" }
+  s.platforms    = { :ios => "12.0" }
   s.source       = { :git => "https://github.com/BunHouth/react-native-ig-image-picker.git", :tag => "#{s.version}" }
 
   s.source_files = "ios/**/*.{h,m,swift}"
   s.requires_arc = true
 
   s.dependency "React"
-  s.dependency "YPImagePicker"
+  s.dependency "YPImagePicker", "~> 5.2.1"
 end
